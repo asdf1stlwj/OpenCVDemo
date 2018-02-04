@@ -11,10 +11,10 @@ import android.widget.ImageView;
 public class GrayActivity extends Activity {
     Button btn_togray;
     ImageView iv_test;
-    // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("opencv_java3");
         System.loadLibrary("opencv_java");
+        //不依赖opencv manager则必须加载上面两个库,否则找不到
         System.loadLibrary("native-lib");
     }
 
