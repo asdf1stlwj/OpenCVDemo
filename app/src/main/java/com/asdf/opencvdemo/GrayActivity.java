@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.asdf.utils.OpenCVJniHelper;
+
 public class GrayActivity extends Activity {
     Button btn_togray;
     ImageView iv_test;
@@ -33,7 +35,7 @@ public class GrayActivity extends Activity {
                 int[] pix=new int[w*h];
                 bitmap.getPixels(pix, 0, w, 0, 0, w, h);
                 //灰度算法
-                int[] resultPixes = OpenCVHelper.toGray(pix, w, h);
+                int[] resultPixes = OpenCVJniHelper.jni_toGray(pix, w, h);
 
                 Bitmap result = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
                 result.setPixels(resultPixes, 0, w, 0, 0, w, h);

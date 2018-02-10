@@ -15,7 +15,7 @@ Java_com_asdf_opencvdemo_MainActivity_stringFromJNI(
     return env->NewStringUTF(hello.c_str());
 }
 
-JNIEXPORT jintArray JNICALL Java_com_asdf_opencvdemo_OpenCVHelper_toGray
+JNIEXPORT jintArray JNICALL Java_com_asdf_utils_OpenCVJniHelper_jni_1toGray
         (JNIEnv* env, jclass clazz, jintArray buf, jint w, jint h){
     jint *cbuf;
     cbuf = env->GetIntArrayElements(buf, JNI_FALSE);
